@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace seregazhuk\PhpWatcher\Screen;
 
@@ -65,7 +67,7 @@ final class Screen
         $this->info(sprintf('starting `%s`', trim($command)));
     }
 
-    public function restarting(string $command = null): void
+    public function restarting(?string $command = null): void
     {
         $this->spinner->erase();
         $this->output->writeln('');

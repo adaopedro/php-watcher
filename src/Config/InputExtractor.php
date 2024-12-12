@@ -13,21 +13,21 @@ final class InputExtractor
         $this->input = $input;
     }
 
-    public function getStringArgument(string $key, string $default = null): ?string
+    public function getStringArgument(string $key, ?string $default = null): ?string
     {
         $argument = $this->input->getArgument($key);
 
         return $this->stringValueOrDefault($argument, $default);
     }
 
-    public function getStringOption(string $key, string $default = null): ?string
+    public function getStringOption(string $key, ?string $default = null): ?string
     {
         $option = $this->input->getOption($key);
 
         return $this->stringValueOrDefault($option, $default);
     }
 
-    private function stringValueOrDefault($value, string $default = null): ?string
+    private function stringValueOrDefault($value, ?string $default = null): ?string
     {
         if ($value === null) {
             return $default;

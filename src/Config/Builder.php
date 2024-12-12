@@ -12,7 +12,7 @@ final class Builder
         'php-watcher.yml.dist',
     ];
 
-    public function fromConfigFile(string $path = null): Config
+    public function fromConfigFile(?string $path = null): Config
     {
         $pathToConfig = empty($path) ? $this->findConfigFile() : $path;
         $values = empty($pathToConfig) ? [] : $this->valuesFromConfigFile($pathToConfig);
